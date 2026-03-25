@@ -1,0 +1,1091 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+  /* Couleurs - palette de base */
+  --color-primary: #15133C;
+  /* dark blue */
+  --color-secondary: #F1EEE9;
+  /* white */
+  --color-bg-light: #F1EEE9;
+  /* white */
+  --color-bg-dark: #73777B;
+  /* gray */
+  --color-text: #15133C;
+  /* dark blue */
+  --color-accent: #EC994B;
+  /* orange */
+
+  /* Espacement - système cohérent */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --space-6: 24px;
+    
+  /* Typographie */
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 24px;
+  --font-size-xl: 40px;
+  --font-size-xxl: 64px;
+
+  /* Bordures */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --line-height-sm: 20px;
+  --line-height-base: 22px;
+  --line-height-lg: 24px;
+  --line-height-xl: 28px;
+  --line-height-xxl: 48px;
+
+  --font-weight-base: 400;
+  --font-weight-lg: 500;
+  --font-weight-xl: 700;
+  
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================================================
+   COMPOSANT : navbar
+   RÔLE :
+   Barre de navigation principale permettant d’accéder aux
+   différentes sections du site et d’afficher l’identité visuelle.
+
+   STRUCTURE HTML ATTENDUE :
+   <header class="navbar">
+     <nav class="navbar__brand">
+       <ul class="navbar__brand-list">
+         <li><img class="navbar__logo"></li>
+         <li><a class="navbar__name"></a></li>
+       </ul>
+     </nav>
+     <nav class="navbar__links">
+       <ul class="navbar__links-list">
+         <li class="navbar__link-item"><a></a></li>
+         <li class="navbar__link-item-btn"><a></a></li>
+       </ul>
+     </nav>
+   </header>
+
+   ÉLÉMENTS :
+   - navbar__brand
+   - navbar__brand-list
+   - navbar__logo-item
+   - navbar__name
+   - navbar__links-list
+   - navbar__link-item
+   - navbar__link-item-btn
+
+   VARIANTES :
+   - bouton de navigation (.navbar__link-item-btn)
+========================================================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  min-height: 80px;
+  padding: 10px 60px;
+  gap: 40px;
+  background: var(--color-primary, #15133C);
+}
+
+.navbar__brand-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  gap: 10px;
+  border-radius: 4px;
+
+}
+
+.navbar__logo-item {
+  width: 57px;
+  height: 36px;
+}
+
+.navbar__name {
+  text-decoration: none;
+  color: var(--color-accent, #EC994B);
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-lg, 24px);
+  font-style: normal;
+  font-weight: var(--font-size-base, 400);
+  line-height: var(--line-height-base, 22px); 
+}
+
+.navbar__links-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 150px;
+  gap: 65px;
+  flex: 1 0 0;
+  text-decoration: none;
+  color: var(--color-secondary, #F1EEE9);
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-style: normal;
+  font-weight: var(--font-size-base, 400);
+  line-height: var(--line-height-base, 22px); 
+}
+
+
+.navbar__link-item-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 192px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  background: var(--color-accent, #EC994B);
+}
+
+.navbar__link-item-btn a{
+  color: var(--color-secondary, #F1EEE9);;
+  text-decoration: none;
+}
+
+.navbar__link-item a {
+  color: var(--color-secondary, #F1EEE9);;
+  text-decoration: none;
+}
+
+/* =========================================================
+   COMPOSANT : hero
+   RÔLE :
+   Section principale d’introduction avec image de fond,
+   titre, description et boutons d’action.
+
+   STRUCTURE HTML ATTENDUE :
+   <section class="hero__container">
+     <div class="hero">
+       <h1 class="hero__title"></h1>
+       <p class="hero__description"></p>
+       <ul class="hero__buttons">
+         <li><a class="hero__btn"></a></li>
+         <li><a class="hero__btn-secondary"></a></li>
+       </ul>
+     </div>
+   </section>
+
+   ÉLÉMENTS :
+   - hero__container
+   - hero__title
+   - hero__description
+   - hero__buttons
+   - hero__btn--primary
+   - hero__btn-secondary
+
+   VARIANTES :
+   - bouton secondaire (.hero__btn-secondary)
+========================================================= */
+
+.hero__container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: stretch;
+  gap: 10px;
+  height: 641px;
+  padding: 60px;
+  background: url("../media/image/2ba6c51215c7ed6515b3b2e16411319a1808fa44.jpg") center / cover no-repeat; 
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  flex: 1 0 0;
+    
+}
+
+.hero__title {
+  color: var(--color-secondary, #F1EEE9);;
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-xxl, 64px);
+  font-style: normal;
+  font-weight: var(--font-weight-xl, 700);
+  line-height: normal;
+  
+}
+
+.hero__description {
+  color: var(--color-secondary, #F1EEE9);;
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-style: normal;
+  font-weight: var(--font-size-lg, 400);
+  line-height: var(--line-height-lg, 24px); 
+}
+
+.hero__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: stretch;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero__btn {
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  width: 240px;
+  padding: 12px;
+  text-decoration: none;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-weight-lg, 500);
+  line-height: var(--line-height-lg, 24px); 
+}
+
+.hero__btn--primary {
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary, #F1EEE9);
+}
+  
+
+.hero__btn--secondary {
+  background: var(--color-accent, #EC994B);
+  color: var(--color-text, #15133C);
+}
+
+
+/* =========================================================
+   COMPOSANT : about
+   RÔLE :
+   Présenter les informations principales du gym avec
+   un titre, un sous-titre et des cartes.
+
+   STRUCTURE HTML ATTENDUE :
+   <section class="about">
+     <div class="about__content">
+       <h2 class="about__title"></h2>
+       <p class="about__subtitle"></p>
+     </div>
+     <div class="about__cards">
+       <div class="about__card">
+         <h3 class="about__card-title"></h3>
+         <p class="about__card-description"></p>
+         <span class="about__card-author"></span>
+       </div>
+     </div>
+   </section>
+
+   ÉLÉMENTS :
+   - about__content
+   - about__title
+   - about__subtitle
+   - about__cards
+   - about__card
+   - about__card-title
+   - about__card-description
+   - about__card-author
+
+   VARIANTES :
+   - aucune
+========================================================= */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: 60px;
+  padding: 60px 170px;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+}
+
+.about__title {
+  width: 520px;
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: var(--font-weight-xl, 700);
+  line-height: var(--line-height-xxl, 48px); 
+  color: var(--color-primary, #15133C);
+  
+}
+
+.about__subtitle {
+  width: 918px;
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-weight-base, 400);
+  line-height: var(--line-height-lg, 24px); 
+  color: var(--color-primary, #15133C);
+    
+}
+
+.about__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: 40px;
+}
+
+.about__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 16px;
+  flex: 1 0 0;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.about__card-title {
+  color: var(--color-primary, #15133C);
+  font-family: "Montagu Slab";
+  font-size: 20px;
+  font-weight: var(--font-weight-lg, 500);
+  line-height: var(--line-height-xl, 28px); 
+}
+
+.about__card-description {
+  color: var(--color-text, #15133C);
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-size-base, 400);
+  line-height: var(--line-height-lg, 24px); 
+}
+
+.about__card-author {
+  overflow: hidden;
+  color: var(--color-text, #15133C);;
+  text-overflow: ellipsis;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-sm, 14px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--line-height-sm, 20px); 
+}
+
+/* =========================================================
+   COMPOSANT : services
+   RÔLE :
+   Présenter les services du gym avec des cartes et un bouton.
+
+   STRUCTURE HTML ATTENDUE :
+   <section class="services">
+     <h2 class="services__title"></h2>
+     <a class="services__btn"></a>
+     <div class="services__cards">
+       <div class="services__card">
+         <img class="services__card-image">
+         <h3 class="services__card-title"></h3>
+         <p class="services__card-description"></p>
+       </div>
+     </div>
+   </section>
+
+   ÉLÉMENTS :
+   - services__title
+   - services__btn
+   - services__cards
+   - services__card
+   - services__card-image
+   - services__card-title
+   - services__card-description
+
+   VARIANTES :
+   - aucune
+========================================================= */
+
+.services {
+  background: var(--color-primary, #15133C);;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  padding: 60px calc(20px + 8vw);
+  gap: 60px;
+}
+
+.services__title {
+  color: var(--color-accent, #EC994B);
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-xl, 40px);
+  font-weight: var(--font-weight-xl, 700);
+  line-height: var(--line-height-xxl, 48px); 
+}
+
+.services__cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  gap: 24px;
+}
+
+.services__btn {
+
+  color: var(--color-text, #15133C);
+  display: flex;
+  justify-content: center;
+  width: 240px;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-weight-lg, 500);
+  line-height: var(--line-height-lg, 24px); 
+  background: var(--color-accent, #EC994B);
+  color: var(--color-text, #15133C);
+}
+
+.services__card {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  align-self: stretch;
+  flex: 1 0 0;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: var(--color-bg-light);
+}
+
+.services__card-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16.333px 0 16px;
+  background: var(--color-secondary, #15133C);
+  width: 100%;
+  height: 500px; 
+}
+
+.services__card-title {
+  color: var(--color-primary, #15133C);
+  font-family: "Montagu Slab";
+  font-size: 20px;font-style: normal;
+  font-weight: var(--font-weight-xl, 700);
+  line-height: var(--line-height-lg, 24px); 
+}
+
+.services__card-description {
+  overflow: hidden;
+  color: var(--color-text, #15133C);
+  text-overflow: ellipsis;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-weight-lg, 500);
+  line-height: var(--line-height-xl, 28px); 
+}
+
+/* =========================================================
+   COMPOSANT : schedule
+   RÔLE :
+   Afficher les horaires sous forme de grille avec icônes.
+
+   STRUCTURE HTML ATTENDUE :
+   <section class="schedule">
+     <div class="schedule__header">
+       <h2 class="schedule__title"></h2>
+       <p class="schedule__subtitle"></p>
+     </div>
+     <ul class="schedule__slots">
+       <li class="schedule__slot">
+         <div class="schedule__slot-icon"></div>
+         <span class="schedule__slot-day"></span>
+         <span class="schedule__slot-hours"></span>
+       </li>
+     </ul>
+   </section>
+
+   ÉLÉMENTS :
+   - schedule__header
+   - schedule__title
+   - schedule__subtitle
+   - schedule__slots
+   - schedule__slot
+   - schedule__slot-icon
+   - schedule__slot-day
+   - schedule__slot-hours
+
+   VARIANTES :
+   - aucune
+========================================================= */
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  padding: 60px 170px;
+  gap: 60px;
+}
+
+.schedule__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 24px;
+}
+
+.schedule__title {
+  color: var(--color-accent, #EC994B);
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-xl, 40px);
+  font-weight: var(--font-weight-xl, 700);
+  line-height: var(--line-height-xxl, 48px);
+  
+  
+}
+
+.schedule__subtitle {
+  color: var(--color-primary, #15133C);
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-size-base, 400);
+  line-height: var(--line-height-lg, 24px);
+}
+
+.schedule__slot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: 8px;
+  width: 30%;
+
+}
+
+.schedule__slots {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 12px 0;
+  flex: 1 0 0;
+}
+
+.schedule__slot-icon {
+  background-color: var(--color-secondary, #F1EEE9); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; 
+  font-size: 50px; 
+}
+
+.schedule__slot-day {
+  color: var(--color-primary, #15133C);
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: var(--line-height-xl, 28px);
+}
+
+.schedule__slot-hours {
+  color: var(--color-text, #15133C);
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: 20px;
+  font-weight: var(--font-weight-base, 400);
+  line-height: 36px; /* 180% */
+}
+
+/* =========================================================
+   COMPOSANT : reviews
+   RÔLE :
+   Afficher les témoignages clients sous forme de cartes.
+
+   STRUCTURE HTML ATTENDUE :
+   <section class="reviews">
+     <h2 class="reviews__title"></h2>
+     <div class="reviews__cards">
+       <div class="reviews__card-block">
+         <img class="reviews__card-logo">
+         <h3 class="reviews__card-author"></h3>
+         <p class="reviews__card-quote"></p>
+       </div>
+     </div>
+   </section>
+
+   ÉLÉMENTS :
+   - reviews__title
+   - reviews__cards
+   - reviews__card-block
+   - reviews__card-logo
+   - reviews__card-author
+   - reviews__card-quote
+
+   VARIANTES :
+   - aucune
+========================================================= */
+
+.reviews {
+  background: var(--color-primary, #15133C);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  padding: 60px 170px;
+  gap: 60px;
+}
+
+.reviews__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1 0 0;
+  color: var(--color-accent);
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-xl, 40px);
+  font-weight: var(--font-weight-xl, 700);
+  line-height: var(--line-height-xxl, 48px);
+}
+
+.card__author {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  gap: 12px;
+  flex: 1 0 0;
+}
+
+.reviews__cards {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 16px;
+  flex: 1 0 0;
+  flex-wrap: wrap;
+}
+
+.reviews__card-block {
+  background: var(--color-secondary, #F1EEE9);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 16px;
+  border-radius: 6px;
+  flex: 1 0 0;
+}
+
+
+.reviews__card-quote {
+  align-self: stretch;
+  overflow: hidden;
+  color: var(--color-text, #15133C);
+  text-overflow: ellipsis;
+  white-space: wrap;
+  height: 72px;
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-size-base, 400);
+  line-height: var(--line-height-lg, 24px);
+}
+
+.reviews__card-logo{
+  width: 32px;
+  height: 32px;
+}
+
+/* =========================================================
+   COMPOSANT : team
+   RÔLE :
+   Présenter l’équipe avec une image, un texte et un bouton.
+
+   STRUCTURE HTML ATTENDUE :
+   <section class="team">
+     <img class="team__image">
+     <div class="team__body">
+       <h2 class="team__title"></h2>
+       <p class="team__description"></p>
+     </div>
+     <a class="team__btn"></a>
+   </section>
+
+   ÉLÉMENTS :
+   - team__image
+   - team__body
+   - team__title
+   - team__description
+   - team__btn
+
+   VARIANTES :
+   - aucune
+========================================================= */
+
+.team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 60px 170px;
+  gap: 200px;
+}
+
+.team__body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.team__image {
+  width: 100px;
+  height: 100px
+}
+
+.team__title {
+  color: var(--color-text, #15133C);
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-lg, 24px);
+  font-weight: var(--font-weight-xl, 700);
+  line-height: 32px; /* 133.333% */
+}
+
+.team__description {
+  color: var(--color-text, #15133C);
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-size-lg, 400);
+  line-height: var(--line-height-lg, 24px);
+}
+
+.team__btn {
+  color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--color-text);
+  text-decoration: none;
+}
+
+/* =========================================================
+   COMPOSANT : pricing
+   RÔLE :
+   Présenter les offres tarifaires sous forme de cartes.
+
+   STRUCTURE HTML ATTENDUE :
+   <section class="pricing">
+     <h2 class="pricing__title"></h2>
+     <p class="pricing__subtitle"></p>
+     <div class="pricing__cards">
+       <div class="pricing__card">
+         <h3 class="pricing__card-title"></h3>
+         <p class="pricing__card-description"></p>
+       </div>
+     </div>
+   </section>
+
+   ÉLÉMENTS :
+   - pricing__title
+   - pricing__subtitle
+   - pricing__cards
+   - pricing__card
+   - pricing__card-title
+   - pricing__card-description
+
+   VARIANTES :
+   - aucune
+========================================================= */
+
+.pricing {
+  background: var(--color-bg-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  padding: 60px 170px;
+  gap: 60px;
+}
+
+
+.pricing__cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  gap: 24px;
+}
+
+.pricing__title {
+  color: var(--color-accent, #EC994B);
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-xl, 40px);
+  font-weight: var(--font-weight-xl, 700);
+  line-height: var(--line-height-xxl, 48px);
+}
+
+.pricing__subtitle {
+  color: var(--color-text, #15133C);
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-style: normal;
+  font-weight: var(--font-size-base, 400);
+  line-height: var(--line-height-lg, 24px);
+}
+
+.pricing__card {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: var(--color-secondary, #F1EEE9);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 16px;
+  flex: 1 0 0;
+}
+
+.pricing__card-title {
+  color: var(--color-text, #15133C);
+  font-family: "Montagu Slab";
+  font-size: 20px;
+  font-weight: var(--font-weight-lg, 500);
+  line-height: var(--line-height-xl, 28px);
+}
+
+.pricing__card-description {
+  color: var(--color-text, #15133C);
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-size-base, 400);
+  line-height: var(--line-height-lg, 24px);
+}
+
+/* =========================================================
+   COMPOSANT : contact
+   RÔLE :
+   Permettre à l’utilisateur d’envoyer un message via un formulaire.
+
+   STRUCTURE HTML ATTENDUE :
+   <section class="contact">
+     <h2 class="contact__title"></h2>
+     <form class="contact__form">
+       <div class="contact__form-group">
+         <label class="contact__form-label"></label>
+         <input class="contact__form-input">
+       </div>
+     </form>
+     <button class="contact__form-btn"></button>
+   </section>
+
+   ÉLÉMENTS :
+   - contact__title
+   - contact__form
+   - contact__form-group
+   - contact__form-label
+   - contact__form-input
+   - contact__form-btn
+
+   VARIANTES :
+   - aucune
+========================================================= */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  padding: 60px 170px;
+  gap: 60px;
+}
+
+.contact__title {
+  color: var(--color-accent, #EC994B);
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-xl, 40px);
+  font-weight: var(--font-weight-xl, 700);
+  line-height: var(--line-height-xxl, 48px);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self:stretch;
+  gap: 40px;
+}
+
+.contact__form-label {
+  display: flex;
+  width: min(100%, 313px);
+  flex-direction: column;
+  color: var(--color-primary, #15133C);
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-weight-lg, 500);
+  line-height: var(--line-height-sm, 20px);
+}
+
+.contact__form-input {
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.50);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-weight-base, 400);
+  line-height: var(--line-height-sm, 20px);
+}
+
+
+.contact__form-btn {
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 314px;
+  height: 50px;
+  border-radius: 8px;
+  background: var(--color-primary, #15133C);
+  color: var(--color-secondary, #F1EEE9);
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-weight-lg, 500);
+  line-height: var(--line-height-lg, 24px);
+}
+
+/* =========================================================
+   COMPOSANT : footer
+   RÔLE :
+   Pied de page contenant navigation secondaire et CTA.
+
+   STRUCTURE HTML ATTENDUE :
+   <footer class="footer">
+     <nav class="footer__nav">
+       <ul class="footer__nav-list">
+         <li class="footer__nav-item"><a></a></li>
+       </ul>
+     </nav>
+     <div class="footer__cta-box">
+       <p class="footer__cta-title"></p>
+       <a class="footer__cta-btn"></a>
+     </div>
+   </footer>
+
+   ÉLÉMENTS :
+   - footer__nav
+   - footer__nav-list
+   - footer__nav-item
+   - footer__cta-box
+   - footer__cta-title
+   - footer__cta-btn
+
+   VARIANTES :
+   - aucune
+========================================================= */
+
+.footer {
+  background: var(--color-primary, #15133C);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: stretch;
+  padding: 30px;
+  gap: 60px;
+}
+
+.footer__nav {
+  color: var(--color-secondary, #F1EEE9);
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-size-base, 400);
+  line-height: var(--line-height-xl, 28px);
+}
+
+.footer__nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  gap: 100px;
+}
+
+.footer__nav-item a {
+  color: var(--color-secondary, #F1EEE9);
+  text-decoration: none;
+}
+
+.footer__cta-box {
+  background: var(--color-secondary, #F1EEE9);
+  text-align: center;
+  padding: var(--font-size-base, 16px);
+  border-radius: 10px;
+}
+
+.footer__cta-title {
+  color: var(--color-text, #15133C);
+  text-align: center;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-base, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-xl, 700);
+  line-height: var(--line-height-base, 22px);
+}
+
+.footer__cta-btn {
+  background: var(--color-accent, #EC994B);
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Montagu Slab";
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-size-base, 400);
+  line-height: var(--line-height-base, 22px);
+}
